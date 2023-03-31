@@ -61,6 +61,7 @@ func on_shop_item_banned(shop_item:ShopItem)->void :
 	
 	ItemService.ban_item(shop_item.item_data)
 	
+	_stats_container.update_stats()
 	_shop_items_container.reload_shop_items_descriptions()
 
 	var has_new_rerolls = false

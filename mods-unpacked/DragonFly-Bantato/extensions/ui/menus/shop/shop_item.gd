@@ -37,11 +37,11 @@ func set_shop_item(p_item_data:ItemParentData, p_wave_value:int = RunData.curren
 
 	if RunData.effects["hp_shop"]:
 		value = ceil(value / 20.0) as int
-		var icon = ItemService.get_stat_icon("stat_max_hp").get_data()
-		icon.resize(64, 64)
-		var texture = ImageTexture.new()
-		texture.create_from_image(icon)
-		_ban_button.set_icon(texture)
+		#var icon = ItemService.get_stat_icon("stat_max_hp").get_data()
+		#icon.resize(64, 64)
+		#var texture = ImageTexture.new()
+		#texture.create_from_image(icon)
+		#_ban_button.set_icon(texture)
 	
 	_ban_button.set_value(value)
 	
