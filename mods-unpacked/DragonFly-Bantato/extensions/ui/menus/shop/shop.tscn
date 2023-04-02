@@ -129,11 +129,11 @@ script = ExtResource( 10 )
 [node name="HBoxContainer2" type="HBoxContainer" parent="Content/MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 132.0
 margin_right = 1434.0
-margin_bottom = 693.0
+margin_bottom = 668.0
 
 [node name="ShopItemsContainer" type="HBoxContainer" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_right = 1434.0
-margin_bottom = 561.0
+margin_bottom = 536.0
 custom_constants/separation = 5
 script = ExtResource( 6 )
 _shop_items_node_paths = [ NodePath("ShopItem"), NodePath("ShopItem2"), NodePath("ShopItem3"), NodePath("ShopItem4") ]
@@ -146,13 +146,16 @@ anchor_bottom = 0.0
 margin_left = 0.0
 margin_top = 0.0
 margin_right = 351.0
-margin_bottom = 561.0
+margin_bottom = 536.0
+
+[node name="ItemDescription" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+expand_indefinitely = false
 
 [node name="EmptySpace" type="Control" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 356.0
 margin_right = 356.0
-margin_bottom = 561.0
+margin_bottom = 536.0
 size_flags_horizontal = 3
 
 [node name="ShopItem2" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer" instance=ExtResource( 2 )]
@@ -163,13 +166,16 @@ anchor_bottom = 0.0
 margin_left = 361.0
 margin_top = 0.0
 margin_right = 712.0
-margin_bottom = 561.0
+margin_bottom = 536.0
+
+[node name="ItemDescription" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem2/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+expand_indefinitely = false
 
 [node name="EmptySpace2" type="Control" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 717.0
 margin_right = 717.0
-margin_bottom = 561.0
+margin_bottom = 536.0
 size_flags_horizontal = 3
 
 [node name="ShopItem3" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer" instance=ExtResource( 2 )]
@@ -180,13 +186,16 @@ anchor_bottom = 0.0
 margin_left = 722.0
 margin_top = 0.0
 margin_right = 1073.0
-margin_bottom = 561.0
+margin_bottom = 536.0
+
+[node name="ItemDescription" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem3/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+expand_indefinitely = false
 
 [node name="EmptySpace3" type="Control" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 1078.0
 margin_right = 1078.0
-margin_bottom = 561.0
+margin_bottom = 536.0
 size_flags_horizontal = 3
 
 [node name="ShopItem4" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer" instance=ExtResource( 2 )]
@@ -197,25 +206,28 @@ anchor_bottom = 0.0
 margin_left = 1083.0
 margin_top = 0.0
 margin_right = 1434.0
-margin_bottom = 561.0
+margin_bottom = 536.0
+
+[node name="ItemDescription" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem4/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+expand_indefinitely = false
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Content/MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 743.0
+margin_top = 718.0
 margin_right = 1434.0
 margin_bottom = 1587.0
 size_flags_vertical = 3
 custom_constants/separation = 25
 
 [node name="ItemsContainer" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3" instance=ExtResource( 16 )]
-margin_top = 568.0
+margin_top = 593.0
 margin_right = 115.0
-margin_bottom = 844.0
+margin_bottom = 869.0
 
 [node name="EmptySpace" type="ColorRect" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 140.0
 margin_right = 1091.0
-margin_bottom = 844.0
+margin_bottom = 869.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -223,9 +235,9 @@ __meta__ = {
 
 [node name="WeaponsContainer" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3" instance=ExtResource( 3 )]
 margin_left = 1116.0
-margin_top = 568.0
+margin_top = 593.0
 margin_right = 1434.0
-margin_bottom = 844.0
+margin_bottom = 869.0
 nb_columns = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Content/MarginContainer/HBoxContainer"]
@@ -512,4 +524,16 @@ focus_mode = 2
 [connection signal="pressed" from="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/RerollButton" to="." method="_on_RerollButton_pressed"]
 [connection signal="pressed" from="Content/MarginContainer/HBoxContainer/VBoxContainer2/GoButton" to="." method="_on_GoButton_pressed"]
 
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem/HBoxContainer2/BanButton"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem/PanelContainer/MarginContainer/VBoxContainer/ItemDescription"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem2"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem2/HBoxContainer2/BanButton"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem2/PanelContainer/MarginContainer/VBoxContainer/ItemDescription"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem3"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem3/HBoxContainer2/BanButton"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem3/PanelContainer/MarginContainer/VBoxContainer/ItemDescription"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem4"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem4/HBoxContainer2/BanButton"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem4/PanelContainer/MarginContainer/VBoxContainer/ItemDescription"]
 [editable path="Content/MarginContainer/HBoxContainer/VBoxContainer2/StatsContainer"]

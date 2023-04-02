@@ -5,8 +5,6 @@
 [ext_resource path="res://mods-unpacked/DragonFly-Bantato/extensions/ui/menus/shop/bantato_ban_icon.png" type="Texture" id=3]
 
 [node name="ShopItem" instance=ExtResource( 1 )]
-margin_right = 80.0
-margin_bottom = 283.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -34,25 +32,30 @@ texture = ExtResource( 3 )
 
 [node name="PanelContainer" parent="." index="1"]
 margin_top = 75.0
-margin_bottom = 500.0
-rect_min_size = Vector2( 0, 425 )
+rect_min_size = Vector2( 0, 400 )
 
 [node name="MarginContainer" parent="PanelContainer" index="0"]
-margin_bottom = 420.0
-
-[node name="VBoxContainer" parent="PanelContainer/MarginContainer" index="0"]
-margin_bottom = 405.0
-
-[node name="EmptySpace" parent="PanelContainer/MarginContainer/VBoxContainer" index="1"]
-margin_bottom = 329.0
-
-[node name="BuyButton" parent="PanelContainer/MarginContainer/VBoxContainer" index="2"]
-margin_top = 333.0
 margin_bottom = 395.0
 
-[node name="HBoxContainer" parent="." index="2"]
-margin_top = 510.0
-margin_bottom = 561.0
+[node name="VBoxContainer" parent="PanelContainer/MarginContainer" index="0"]
+margin_bottom = 380.0
+
+[node name="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemDescription" index="1"]
+margin_top = 111.0
+margin_right = 321.0
+margin_bottom = 111.0
+
+[node name="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemDescription" index="2"]
+margin_top = 111.0
+margin_bottom = 321.0
+rect_min_size = Vector2( 0, 210 )
+
+[node name="EmptySpace" parent="PanelContainer/MarginContainer/VBoxContainer" index="1"]
+margin_bottom = 304.0
+
+[node name="BuyButton" parent="PanelContainer/MarginContainer/VBoxContainer" index="2"]
+margin_top = 308.0
+margin_bottom = 370.0
 
 [node name="LockIcon" parent="HBoxContainer" index="1"]
 margin_bottom = 51.0
@@ -60,3 +63,4 @@ margin_bottom = 51.0
 [connection signal="pressed" from="HBoxContainer2/BanButton" to="." method="_on_BanButton_pressed"]
 
 [editable path="HBoxContainer2/BanButton"]
+[editable path="PanelContainer/MarginContainer/VBoxContainer/ItemDescription"]

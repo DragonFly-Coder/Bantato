@@ -10,6 +10,7 @@ signal item_banned(item_data)
 # Called when the node enters the scene tree for the first time.
 func _ready()->void :
 	var _error_shop_item_banned = _shop_items_container.connect("shop_item_banned", self, "on_shop_item_banned")
+	_shop_items_container.set_ban_costs(_last_reroll_price)
 	
 	
 func fill_shop_unbanned_items_when_locked(locked_items:Array, banned_items:Array)->void :
@@ -40,15 +41,16 @@ func on_shop_item_banned(shop_item:ShopItem)->void :
 			_shop_items.erase(item)
 			break
 			
-	RunData.remove_currency(shop_item.value)
+	#RunData.remove_currency(shop_item.value)
+	RunData.remove_gold(_last_reroll_price)
 	
-	var nb_coupons = RunData.get_nb_item("item_coupon")
+#	var nb_coupons = RunData.get_nb_item("item_coupon")
 	
-	if nb_coupons > 0:
-		var coupon_value = get_coupon_value()
-		var coupon_effect = nb_coupons * (coupon_value / 100.0)
-		var base_value = ItemService.get_value(shop_item.wave_value, shop_item.item_data.value, false, shop_item.item_data is WeaponData)
-		RunData.tracked_item_effects["item_coupon"] += (base_value * coupon_effect) as int
+#	if nb_coupons > 0:
+#		var coupon_value = get_coupon_value()
+#		var coupon_effect = nb_coupons * (coupon_value / 100.0)
+#		var base_value = ItemService.get_value(shop_item.wave_value, shop_item.item_data.value, false, shop_item.item_data is WeaponData)
+#		RunData.tracked_item_effects["item_coupon"] += (base_value * coupon_effect) as int
 	
 	emit_signal("item_banned", shop_item.item_data)
 	
@@ -66,12 +68,6 @@ func on_shop_item_banned(shop_item:ShopItem)->void :
 
 	var has_new_rerolls = false
 	
-	if RunData.effects["free_rerolls"] > _initial_free_rerolls:
-		var new_rerolls = RunData.effects["free_rerolls"] - _initial_free_rerolls
-		_initial_free_rerolls = RunData.effects["free_rerolls"]
-		_free_rerolls += new_rerolls
-		has_new_rerolls = true
-	
 	if _shop_items.size() == 0:
 		
 		if _reroll_price == 0:
@@ -87,3 +83,7 @@ func on_shop_item_banned(shop_item:ShopItem)->void :
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func set_reroll_button_price()-> void:
+	.set_reroll_button_price()
+	_shop_items_container.set_ban_costs(_last_reroll_price)

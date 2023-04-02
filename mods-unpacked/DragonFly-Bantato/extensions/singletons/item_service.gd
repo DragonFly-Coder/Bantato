@@ -223,3 +223,7 @@ func get_rand_unbanned_item_from_wave(wave:int, type:int, shop_items:Array = [],
 		elt = Utils.get_rand_element(pool)
 	
 	return elt
+	
+	
+#func get_rand_item_from_wave(wave:int, type:int, shop_items:Array = [], prev_shop_items:Array = [], fixed_tier:int = - 1)->ItemParentData:
+#	return get_element(items, "item_dangerous_bunny") as ItemParentData

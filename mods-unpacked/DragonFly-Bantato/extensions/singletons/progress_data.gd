@@ -40,16 +40,17 @@ func deserialize_run_state(state:Dictionary)->Dictionary:
 	
 	deserialized_run_state.banned_shop_items = []
 	
-	for banned_item in state.banned_shop_items:
-		#print(banned_item)
-		#print(typeof(banned_item[0]) == TYPE_STRING)
-		var item_data = ItemService.get_element(ItemService.items, banned_item[0])
-		var weapon_data = ItemService.get_element(ItemService.weapons, banned_item[0])
-		
-		if item_data != null:
-			deserialized_run_state.banned_shop_items.push_back([item_data, banned_item[1]])
-		
-		if weapon_data != null:
-			deserialized_run_state.banned_shop_items.push_back([weapon_data, banned_item[1]])
+	if state.has("banned_shop_items"):
+		for banned_item in state.banned_shop_items:
+			#print(banned_item)
+			#print(typeof(banned_item[0]) == TYPE_STRING)
+			var item_data = ItemService.get_element(ItemService.items, banned_item[0])
+			var weapon_data = ItemService.get_element(ItemService.weapons, banned_item[0])
+			
+			if item_data != null:
+				deserialized_run_state.banned_shop_items.push_back([item_data, banned_item[1]])
+			
+			if weapon_data != null:
+				deserialized_run_state.banned_shop_items.push_back([weapon_data, banned_item[1]])
 	
 	return deserialized_run_state
