@@ -6,13 +6,20 @@ extends "res://ui/menus/shop/shop.gd"
 # var b = "text"
 signal item_banned(item_data)
 
+onready var _banned_container = $"%BannedContainer"
+onready var _switch_button = $"%SwitchButton"
 
 # Called when the node enters the scene tree for the first time.
 func _ready()->void :
-	var _error_shop_item_banned = _shop_items_container.connect("shop_item_banned", self, "on_shop_item_banned")
+	_banned_container.set_data("BANNED", -1, RunData.banned_shop_items, true, true)
 	_shop_items_container.set_ban_costs(_last_reroll_price)
 	
+	var _error_shop_item_banned = _shop_items_container.connect("shop_item_banned", self, "on_shop_item_banned")
+	var _error_items_item_bought = connect("item_banned", _banned_container._elements, "on_item_banned")
 	
+	_focus_manager.init_banned_container(_banned_container)
+
+
 func fill_shop_unbanned_items_when_locked(locked_items:Array, banned_items:Array)->void :
 	unlock_all_shop_items_visually()
 	
@@ -87,3 +94,14 @@ func on_shop_item_banned(shop_item:ShopItem)->void :
 func set_reroll_button_price()-> void:
 	.set_reroll_button_price()
 	_shop_items_container.set_ban_costs(_last_reroll_price)
+	
+	
+func _on_SwitchButton_pressed():
+	if _items_container.visible:
+		_items_container.hide()
+		_banned_container.show()
+		_switch_button.set_text(tr("SWITCH_TO_ITEMS"))
+	else:
+		_banned_container.hide()
+		_items_container.show()
+		_switch_button.set_text(tr("SWITCH_TO_BANNED"))

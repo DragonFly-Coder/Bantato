@@ -89,16 +89,31 @@ margin_bottom = 63.0
 custom_fonts/font = ExtResource( 22 )
 text = "MENU_SHOP"
 
-[node name="EmptySpace" type="Control" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="EmptySpace3" type="Control" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 240.0
-margin_right = 771.0
+margin_right = 445.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+
+[node name="SwitchButton" type="Button" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 449.0
+margin_right = 887.0
+margin_bottom = 82.0
+text = "SWITCH_TO_BANNED"
+script = ExtResource( 13 )
+
+[node name="EmptySpace" type="Control" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 891.0
+margin_right = 1096.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 
 [node name="GoldUI" type="HBoxContainer" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 775.0
-margin_right = 865.0
+margin_left = 1100.0
+margin_right = 1190.0
 margin_bottom = 82.0
 alignment = 1
 
@@ -116,14 +131,14 @@ script = ExtResource( 7 )
 
 [node name="EmptySpace2" type="Control" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 869.0
-margin_right = 1400.0
+margin_left = 1194.0
+margin_right = 1399.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 
 [node name="RerollButton" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 8 )]
-margin_left = 1404.0
-margin_right = 1434.0
+margin_left = 1403.0
+margin_right = 1433.0
 script = ExtResource( 10 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Content/MarginContainer/HBoxContainer/VBoxContainer"]
@@ -223,6 +238,33 @@ margin_top = 593.0
 margin_right = 115.0
 margin_bottom = 869.0
 
+[node name="Label" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/ItemsContainer" index="0"]
+margin_right = 115.0
+margin_bottom = 45.0
+
+[node name="ScrollContainer" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/ItemsContainer" index="1"]
+margin_top = 70.0
+margin_right = 115.0
+margin_bottom = 276.0
+
+[node name="BannedContainer" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3" instance=ExtResource( 16 )]
+unique_name_in_owner = true
+visible = false
+margin_left = 140.0
+margin_top = 478.0
+margin_right = 298.0
+margin_bottom = 754.0
+
+[node name="Label" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/BannedContainer" index="0"]
+margin_right = 158.0
+margin_bottom = 45.0
+text = "BANNED"
+
+[node name="ScrollContainer" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/BannedContainer" index="1"]
+margin_top = 70.0
+margin_right = 158.0
+margin_bottom = 276.0
+
 [node name="EmptySpace" type="ColorRect" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 140.0
@@ -239,6 +281,13 @@ margin_top = 593.0
 margin_right = 1434.0
 margin_bottom = 869.0
 nb_columns = 3
+
+[node name="Label" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/WeaponsContainer" index="0"]
+margin_bottom = 45.0
+
+[node name="ScrollContainer" parent="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/WeaponsContainer" index="1"]
+margin_top = 70.0
+margin_bottom = 276.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Content/MarginContainer/HBoxContainer"]
 margin_left = 1459.0
@@ -520,6 +569,7 @@ pause_mode = 2
 visible = false
 focus_mode = 2
 
+[connection signal="pressed" from="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/SwitchButton" to="." method="_on_SwitchButton_pressed"]
 [connection signal="focus_entered" from="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/RerollButton" to="." method="_on_RerollButton_focus_entered"]
 [connection signal="pressed" from="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/RerollButton" to="." method="_on_RerollButton_pressed"]
 [connection signal="pressed" from="Content/MarginContainer/HBoxContainer/VBoxContainer2/GoButton" to="." method="_on_GoButton_pressed"]
@@ -536,4 +586,7 @@ focus_mode = 2
 [editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem4"]
 [editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem4/HBoxContainer2/BanButton"]
 [editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ShopItemsContainer/ShopItem4/PanelContainer/MarginContainer/VBoxContainer/ItemDescription"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/ItemsContainer"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/BannedContainer"]
+[editable path="Content/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/WeaponsContainer"]
 [editable path="Content/MarginContainer/HBoxContainer/VBoxContainer2/StatsContainer"]

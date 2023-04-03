@@ -1,7 +1,7 @@
 {
 	"name": "Bantato",
 	"namespace": "DragonFly",
-	"version_number": "0.0.1",
+	"version_number": "0.2.0",
 	"description": "Add a feature to ban items in the shop",
 	"website_url": "https://github.com/DragonFly-Coder/Bantato",
 	"dependencies": [],
