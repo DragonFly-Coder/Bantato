@@ -16,7 +16,13 @@ extends "res://ui/menus/shop/inventory.gd"
 #	pass
 
 func on_item_banned(item_data:ItemParentData)->void :
-	add_element(item_data, false)
+	if item_data is WeaponData:
+		var same_weapons = ItemService.get_all_level_weapons(item_data)
+		same_weapons.sort_custom(ItemService, "sort_weapon_level")
+		for weapon in same_weapons:
+			add_element(weapon, false)
+	else:
+		add_element(item_data, false)
 	
 	
 func set_elements(elements:Array, reverse_order:bool = false, replace:bool = true, prioritize_gameplay_elements:bool = false)->void :

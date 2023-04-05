@@ -37,4 +37,5 @@ func get_state(
 func resume_from_state(state:Dictionary)->void :
 	.resume_from_state(state)
 	banned_shop_items = state.banned_shop_items
-	ItemService.ban_items(banned_shop_items)
+#	ItemService.ban_items(banned_shop_items)
+	ItemService.ban_list(banned_shop_items)

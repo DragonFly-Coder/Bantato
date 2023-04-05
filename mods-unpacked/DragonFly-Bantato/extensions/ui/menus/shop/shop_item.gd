@@ -4,7 +4,7 @@ extends "res://ui/menus/shop/shop_item.gd"
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-#var ban_cost: = 1
+var ban_cost: = 1
 signal ban_button_pressed(shop_item)
 
 onready var _ban_button = $HBoxContainer2 / BanButton
@@ -72,6 +72,12 @@ func _on_BanButton_mouse_entered()->void :
 	emit_signal("shop_item_focused", self)
 	
 	
-func set_ban_cost(value:int)->void :
-#	ban_cost = value
-	_ban_button.set_value(value)
+func set_ban_cost(base:int)->void :
+	var unbanned_num = ItemService.get_unbanned_num(item_data) - 1
+	var total_num = ItemService.get_total_num(item_data)
+	var ratio = float(unbanned_num) / total_num
+	var calc = -1 / log(1-ratio) * base
+	if item_data is WeaponData:
+		calc *= 2
+	ban_cost = max(calc, 1) as int
+	_ban_button.set_value(ban_cost)

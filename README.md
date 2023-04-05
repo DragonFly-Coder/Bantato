@@ -7,12 +7,18 @@
 ## 说明
 
 - 在商店每个物品上方增加了一个禁用该物品的按钮，禁用后该物品不会再在商店中出现。
-- 目前不同等级的武器被视作不同的物品。
-- 目前禁用的费用等同于下一次非免费刷新的价格。
+- ~~目前不同等级的武器被视作不同的物品。~~
+- **现在可以一次性禁用所有等级的某种武器。**
+- ~~目前禁用的费用等同于下一次非免费刷新的价格。~~
+- **重新设计了禁用费用算法，目前与禁用物品数量占比正相关。**
+- 加入了一个显示按钮，可以显示自己禁用过哪些物品。
+- **可能与绝大多数其他mod不兼容。**
 
 ## 最近更新
 
-* 加入了一个显示按钮，可以显示自己禁用过哪些物品。
+* 重新设计了禁用费用算法，目前与禁用物品数量占比正相关（道具与武器分开计算）。
+* 现在可以一次性禁用所有等级的某种武器。作为平衡，其禁用费用也会增加。
+* 增加了禁用数量限制。某种品质的道具/武器可用数目低于5时，将无法禁用该品质的物品。
 
 
 
@@ -23,10 +29,16 @@ Hi! This is a MOD made for *Brotato* that added a feature to ban items in the sh
 ## Postscript
 
 - Added a button above each item in the shop to ban it. After banning the item, it will no longer appear in the shop.
-- Currently different levels of weapons are treated as different items.
-- Currently the cost of banning an item is equal to next non-free *Reroll* cost.
+- ~~Currently different levels of weapons are treated as different items.~~
+- **It is now possible to ban all levels of a certain weapon at once.**
+- ~~Currently the cost of banning an item is equal to next non-free *Reroll* cost.~~
+- **The banning cost algorithm is redesigned, which is currently positively correlated with the proportion of the number of banned items.**
+- Added a display button to show which items you have banned.
+- **Probably not compatible with the vast majority of other mods.**
 
 ## Related Update
 
-- Added a display button to show which items you have disabled.
+- The cost algorithm of banning is redesigned, which is currently positively correlated with the proportion of the number of banned items. (Weapons and Items are counted separately)
+- It is now possible to ban all levels of a certain weapon at once. As a counterbalance, its banning cost will also increase.
+- Added the number limit of banning. Items/Weapons of a certain quality cannot be banned when the number of available items is less than 5.
 

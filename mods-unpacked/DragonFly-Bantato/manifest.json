@@ -1,8 +1,8 @@
 {
 	"name": "Bantato",
 	"namespace": "DragonFly",
-	"version_number": "0.2.0",
-	"description": "Add a feature to ban items in the shop",
+	"version_number": "0.3.0",
+	"description": "A mod made for Brotato that added a feature to ban items in the shop",
 	"website_url": "https://github.com/DragonFly-Coder/Bantato",
 	"dependencies": [],
 	"extra": {
